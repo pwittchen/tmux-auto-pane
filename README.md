@@ -8,4 +8,4 @@ Initial concept of supported layouts:
 - 1u1d (one up, one down)
 - 1u2d (on up, two down)
 - 2u1d (two up, one down)
-- tiles = 2l2r = 2u2d (4 tiles in each corner)
+- tiles = 2l2r = 2u2d (1 tile in the each corner)
