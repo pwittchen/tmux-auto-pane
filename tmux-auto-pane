@@ -20,20 +20,20 @@ showHelp() {
         "
 }
 
-pane1l1r() {
+createLayout1l1r() {
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
   && clear
 }
 
-pane1l2r() {
+createLayout1l2r() {
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
   && clear
 }
 
-pane2l1r() {
+createLayout2l1r() {
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
   xdotool key ctrl+b shift+48 \
@@ -42,20 +42,20 @@ pane2l1r() {
   && clear
 }
 
-pane1u1d() {
+createLayout1u1d() {
   xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
   && clear
 }
 
-pane1u2d() {
+createLayout1u2d() {
   xdotool key ctrl+b shift+48 \
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
   && clear
 }
 
-pane2u1d() {
+createLayout2u1d() {
   xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
   xdotool key ctrl+b shift+5 \
@@ -64,7 +64,7 @@ pane2u1d() {
   && clear
 }
 
-pane4Tiles() {
+createLayout4Tiles() {
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
@@ -88,14 +88,14 @@ eval set -- "$OPTS"
 
 while true; do
   case "$1" in
-    -h | --help ) showHelp;   shift ;;
-    --1l1r      ) pane1l1r;   shift ;;
-    --1l2r      ) pane1l2r;   shift ;;
-    --2l1r      ) pane2l1r;   shift ;;
-    --1u1d      ) pane1u1d;   shift ;;
-    --1u2d      ) pane1u2d;   shift ;;
-    --2u1d      ) pane2u1d;   shift ;;
-    --4tiles    ) pane4Tiles; shift ;;
+    -h | --help ) showHelp;           shift ;;
+    --1l1r      ) createLayout1l1r;   shift ;;
+    --1l2r      ) createLayout1l2r;   shift ;;
+    --2l1r      ) createLayout2l1r;   shift ;;
+    --1u1d      ) createLayout1u1d;   shift ;;
+    --1u2d      ) createLayout1u2d;   shift ;;
+    --2u1d      ) createLayout2u1d;   shift ;;
+    --4tiles    ) createLayout4Tiles; shift ;;
     -- ) shift; break ;;
     * ) break ;;
   esac
