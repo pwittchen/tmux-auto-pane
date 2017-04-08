@@ -5,7 +5,8 @@ a tiny tool for creating pre-defined tile layouts in [tmux](https://tmux.github.
 requirements
 ------------
 
-[xdotool](http://www.semicomplete.com/projects/xdotool) is required to use that script, so it's working only on linux right now
+- [xdotool](http://www.semicomplete.com/projects/xdotool) is required to use that script, so it's working only on linux right now
+- of course, we need to execute this script inside [tmux](https://tmux.github.io/)
 
 usage
 -----
