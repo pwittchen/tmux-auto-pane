@@ -82,7 +82,7 @@ checkIfXdotoolExists() {
 
 checkIfXdotoolExists
 
-OPTS=`getopt -o h: --long help,1l1r,1l2r,2l1r,1u1d,1u2d,2u1d,4tiles -n 'parse-options' -- "$@"`
+OPTS=`getopt -o h --long help,1l1r,1l2r,2l1r,1u1d,1u2d,2u1d,4tiles -n 'parse-options' -- "$@"`
 if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
 eval set -- "$OPTS"
 
