@@ -8,14 +8,14 @@ usage
 call `tmux-auto-pane` script with one of the following parameters
 
 ```shell
---help | -h showing help
---1l1r      one left, one right
---1l2r      one left, two right
---2l1r      two left, one right
---1u1d      one up, one down
---1u2d      on up, two down
---2u1d      two up, one down
---4tiles    4 tiles, 1 in each corner
+--help | -h   showing help
+--1l1r        one left, one right
+--1l2r        one left, two right
+--2l1r        two left, one right
+--1u1d        one up, one down
+--1u2d        on up, two down
+--2u1d        two up, one down
+--4tiles      4 tiles, 1 in each corner
 ```
 
 for example: `tmux-auto-pane --4tiles`
