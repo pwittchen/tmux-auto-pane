@@ -2,6 +2,11 @@ tmux-auto-pane
 ==============
 a tiny tool for creating pre-defined tile layouts in [tmux](https://tmux.github.io/) on linux with [xdotool](http://www.semicomplete.com/projects/xdotool)
 
+requirements
+------------
+
+[xdotool](http://www.semicomplete.com/projects/xdotool) is required to use that script, so it's working only on linux right now
+
 usage
 -----
 
