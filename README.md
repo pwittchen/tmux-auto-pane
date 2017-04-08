@@ -20,6 +20,16 @@ call `tmux-auto-pane` script with one of the following parameters
 
 for example: `tmux-auto-pane --4tiles`
 
+will generate such layout:
+
+```
+ ____ ____
+|    |    |
+|____|___ |
+|    |    |
+|____|____|
+```
+
 installation and update
 -----------------------
 
