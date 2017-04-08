@@ -1,0 +1,107 @@
+
+#!/usr/bin/env bash
+
+set -e # automatically exit script on error
+
+showHelp() {
+  echo "
+        tmux-auto-pane
+        a tiny tool for creating pre-defined tile layouts in tmux on linux with xdotool
+
+        usage:
+
+          --help | -h showing help
+          --1l1r      one left, one right
+          --1l2r      one left, two right
+          --2l1r      two left, one right
+          --1u1d      one up, one down
+          --1u2d      on up, two down
+          --2u1d      two up, one down
+          --4tiles    4 tiles, 1 in each corner
+        "
+}
+
+pane1l1r() {
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane1l2r() {
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane2l1r() {
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b o \
+  xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b o \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane1u1d() {
+  xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane1u2d() {
+  xdotool key ctrl+b shift+48 \
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane2u1d() {
+  xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b o \
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b o \
+  && xdotool key ctrl+b o \
+  && clear
+}
+
+pane4Tiles() {
+  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b o \
+  && xdotool key ctrl+b shift+48 ctrl+b o ctrl+b o ctrl+b o \
+  && clear
+}
+
+checkIfXdotoolExists() {
+  if ! type "xdotool" > /dev/null; then
+      echo "xdotool is not installed, but it's required to use this script"
+      echo "please, install xdotool and run the script again"
+      exit
+  fi
+}
+
+checkIfXdotoolExists
+
+OPTS=`getopt -o h: --long help,1l1r,1l2r,2l1r,1u1d,1u2d,2u1d,4tiles -n 'parse-options' -- "$@"`
+if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
+eval set -- "$OPTS"
+
+while true; do
+  case "$1" in
+    -h | --help ) showHelp;   shift ;;
+    --1l1r      ) pane1l1r;   shift ;;
+    --1l2r      ) pane1l2r;   shift ;;
+    --2l1r      ) pane2l1r;   shift ;;
+    --1u1d      ) pane1u1d;   shift ;;
+    --1u2d      ) pane1u2d;   shift ;;
+    --2u1d      ) pane2u1d;   shift ;;
+    --4tiles    ) pane4Tiles; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+
+shift $((OPTIND-1))
+
+[ "$1" = "--" ] && shift
