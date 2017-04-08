@@ -19,3 +19,16 @@ call `tmux-auto-pane` script with one of the following parameters
 ```
 
 for example: `tmux-auto-pane --4tiles`
+
+installation and update
+-----------------------
+
+with **wget**:
+```shell
+sh -c "$(wget https://raw.githubusercontent.com/pwittchen/tmux-auto-pane/master/install.sh -O -)"
+```
+
+with **curl**:
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/pwittchen/tmux-auto-pane/master/install.sh)"
+```
