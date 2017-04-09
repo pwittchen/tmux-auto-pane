@@ -36,7 +36,7 @@ createLayout1l2r() {
 createLayout2l1r() {
   xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
-  xdotool key ctrl+b shift+48 \
+  && xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
   && xdotool key ctrl+b o \
   && clear
@@ -50,7 +50,7 @@ createLayout1u1d() {
 
 createLayout1u2d() {
   xdotool key ctrl+b shift+48 \
-  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
   && clear
 }
@@ -58,7 +58,7 @@ createLayout1u2d() {
 createLayout2u1d() {
   xdotool key ctrl+b shift+48 \
   && xdotool key ctrl+b o \
-  xdotool key ctrl+b shift+5 \
+  && xdotool key ctrl+b shift+5 \
   && xdotool key ctrl+b o \
   && xdotool key ctrl+b o \
   && clear
